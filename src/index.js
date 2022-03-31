@@ -22,15 +22,15 @@ ReactDOM.render(
           <Route path="profile/:userId" element={<Profile />} />
           <Route
             path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
+            element={(
+              <main style={{ padding: '1rem' }}>
                 <p>There's nothing here!</p>
               </main>
-            }
+            )}
           />
         </Route>
       </Routes>
     </ThemeProvider>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

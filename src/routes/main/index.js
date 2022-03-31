@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../components/button';
 
 const Container = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ const Container = styled.div`
 const Main = () => (
   <Container>
     <h1>Main</h1>
+    <Button variant="primary" disabled>Buscar</Button>
   </Container>
 );
 

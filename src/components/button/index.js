@@ -19,7 +19,12 @@ const getVariantStyles = ({ variant, theme }) => {
 const Button = styled.button`
   height: 50px;
   border-radius: 5px;
-  ${props => getVariantStyles(props)};
+  ${getVariantStyles};
+  
+  &:disabled {
+    opacity: 0.6;
+    filter: saturate(60%);
+  }
 `;
 
 Button.propTypes = {

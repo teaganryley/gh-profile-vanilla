@@ -12,7 +12,7 @@ const Container = styled.div`
 const Main = () => (
   <Container>
     <h1>Main</h1>
-    <Button variant="primary" disabled>Buscar</Button>
+    <Button variant="primary">Buscar</Button>
   </Container>
 );
 

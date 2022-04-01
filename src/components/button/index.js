@@ -7,18 +7,27 @@ const getVariantStyles = ({ variant, theme }) => {
       return `
         color: ${theme.colors.text};
         background: ${theme.colors.background};
+        width: 192px;
+        font-size: 18px
       `;
     default:
       return `
         color: ${theme.colors.accent};
         background: ${theme.colors.primary};
+        width: 118px;
+        font-size: 22px;
       `;
   }
 };
 
 const Button = styled.button`
   height: 50px;
+  border: none;
   border-radius: 5px;
+  font-family: inherit;
+  text-align: center;
+  vertical-align: center;
+  font-style: italic;
   ${getVariantStyles};
   
   &:disabled {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Icon = styled.img`
   width: 30px;
   height: 30px;
-  background-color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.accent};
 `;
 
 Icon.propTypes = {

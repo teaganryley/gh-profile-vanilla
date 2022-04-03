@@ -20,13 +20,17 @@ const getVariantStyles = ({ variant, theme }) => {
   }
 };
 
+// text-align: center;
+// vertical-align: center;
+
 const Button = styled.button`
   height: 50px;
   border: none;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: inherit;
-  text-align: center;
-  vertical-align: center;
   font-style: italic;
   ${getVariantStyles};
   

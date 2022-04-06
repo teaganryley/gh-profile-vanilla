@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Container, Row, Col } from 'react-grid-system';
+import StyledIcon from '../../components/icon';
 import Button from '../../components/button';
-import Icon from '../../components/icon';
 import Input from '../../components/input';
 import search from '../../assets/search.png';
 
-const Container = styled.div`
+const StyledContainer = styled(Container)`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,17 +14,39 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const Label = styled.label`
+  color: ${({ theme }) => theme.colors.text};
+  font-family: inherit;
+  font-size: 40px;
+  font-style: italic;
+  line-height: 50px;
+  width: 500px;
+  text-align: center;
+`;
+
 const Main = () => (
-  <Container>
-    <h1>Main</h1>
+  <StyledContainer>
     <form>
-      <Input type="text" value="Type the username here..." />
-      <Button variant="primary">
-        <Icon src={search} />
-        Buscar
-      </Button>
+      <Row align="center" justify="center" nogutter>
+        <Label>Search Devs</Label>
+      </Row>
+      <Row align="center" justify="center" nogutter>
+        <Col>
+          <Input
+            type="text"
+            value="Type the username here..."
+            id="search-input"
+          />
+        </Col>
+        <Col>
+          <Button variant="primary">
+            <StyledIcon src={search} color="#ECEFF4" />
+            Buscar
+          </Button>
+        </Col>
+      </Row>
     </form>
-  </Container>
+  </StyledContainer>
 );
 
 export default Main;

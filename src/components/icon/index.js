@@ -1,14 +1,10 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import IconTint from 'react-icon-tint';
 
-const Icon = styled.img`
+const StyledIcon = styled(IconTint)`
   width: 30px;
   height: 30px;
   color: ${({ theme }) => theme.colors.accent};
 `;
 
-Icon.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default Icon;
+export default StyledIcon;

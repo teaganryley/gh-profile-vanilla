@@ -4,6 +4,18 @@
     "airbnb",
     "react-app/jest"
   ],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "components",
+            "./src/components"
+          ]
+        ]
+      }
+    }
+  },
   "rules": {
     "arrow-parens": [
       "error",

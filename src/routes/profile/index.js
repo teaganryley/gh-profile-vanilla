@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-// import UserProfile from '../../components/user-profile';
+import UserProfile from 'components/user-profile';
 
 const Profile = () => (
   <Container fluid>
@@ -9,6 +9,7 @@ const Profile = () => (
         <Row>
           <Col xs={3} debug>
             user profile goes here
+            <UserProfile />
           </Col>
           <Col xs={9} debug>
             repo list goes here

@@ -6,11 +6,11 @@ import {
   Route,
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import Main from 'routes/main';
+import Profile from 'routes/profile';
+import App from './App';
 import GlobalStyle from './styles';
 import theme from './theme';
-import App from './App';
-import Main from './routes/main';
-import Profile from './routes/profile';
 
 ReactDOM.render(
   <BrowserRouter>

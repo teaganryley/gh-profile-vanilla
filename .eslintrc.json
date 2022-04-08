@@ -9,8 +9,20 @@
       "alias": {
         "map": [
           [
+            "assets",
+            "./src/assets"
+          ],
+          [
             "components",
             "./src/components"
+          ],
+          [
+            "mocks",
+            "./src/mocks"
+          ],
+          [
+            "routes",
+            "./src/routes"
           ]
         ]
       }

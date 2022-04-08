@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
-import StyledIcon from '../../components/icon';
-import Button from '../../components/button';
-import Input from '../../components/input';
-import search from '../../assets/search.png';
+import StyledIcon from 'components/icon';
+import Button from 'components/button';
+import Input from 'components/input';
+import search from 'assets/search.png';
 
 const StyledContainer = styled(Container)`
   height: 100vh;

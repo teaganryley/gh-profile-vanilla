@@ -5,7 +5,7 @@ const getVariantStyles = ({ variant, theme }) => {
   switch (variant) {
     case 'secondary':
       return `
-        color: ${theme.colors.text};
+        color: ${theme.colors.secondary};
         background: ${theme.colors.background};
         width: 192px;
         font-size: 18px

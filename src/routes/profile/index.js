@@ -1,24 +1,23 @@
+/* eslint-disable */
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import UserProfile from 'components/user-profile';
+import styled from 'styled-components';
+import User from 'components/user';
 import userMock from 'mocks/user-mock.json';
 
+const StyledContainer = styled(Container)`
+  background: ${({ theme }) => theme.colors.background};
+`;
+
 const Profile = () => (
-  <Container fluid>
-    <Row debug>
-      <Col xs={12} debug>
-        <Row>
-          <Col xs={3} debug>
-            user profile goes here
-            <UserProfile user={userMock} />
-          </Col>
-          <Col xs={9} debug>
-            repo list goes here
-          </Col>
-        </Row>
-      </Col>
-    </Row>
-  </Container>
+  <Row nogutter>
+    <Col xs={3}>
+      <User user={userMock} />
+    </Col>
+    <Col xs={9}>
+      repo list goes here
+    </Col>
+  </Row>
 );
 
 export default Profile;

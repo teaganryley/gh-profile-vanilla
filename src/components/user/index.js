@@ -18,10 +18,16 @@ const Avatar = styled.img`
 `;
 
 // is theme in props? can i destructure?
+// could columns be switched to rows? might be easier to control, more readable
 const User = ({ user }) => (
   <ProfileWrapper>
-    <Container fluid>
-      <Row align="center" justify="center" direction="row">
+    <Container fluid style={{ height: '100vh' }}>
+      <Row
+        align="center"
+        justify="center"
+        direction="column"
+        // style={{ height: '100vh' }}
+      >
         <Col xs={12}>
           <Avatar src={user.avatar_url} alt="user avatar" />
         </Col>
@@ -54,11 +60,13 @@ const User = ({ user }) => (
             condimentum, hendrerit mi eu, feugiat.
           </Text>
         </Col>
-        <Row>
-          <Col xs={4}>1</Col>
-          <Col xs={4}>2</Col>
-          <Col xs={4}>3</Col>
-        </Row>
+        <Col xs={12}>
+          <Row align="center" justify="between" direction="row">
+            <Col xs={4} debug>1</Col>
+            <Col xs={4} debug>2</Col>
+            <Col xs={4} debug>3</Col>
+          </Row>
+        </Col>
       </Row>
     </Container>
   </ProfileWrapper>

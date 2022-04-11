@@ -5,14 +5,17 @@ import styled from 'styled-components';
 import User from 'components/user';
 import userMock from 'mocks/user-mock.json';
 
+/*
 const StyledContainer = styled(Container)`
   background: ${({ theme }) => theme.colors.background};
 `;
+*/
 
+// test layouts
 const Profile = () => (
   <Row nogutter>
     <Col xs={3}>
-      <User user={userMock} />
+      Test column goes here
     </Col>
     <Col xs={9}>
       repo list goes here

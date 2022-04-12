@@ -11,11 +11,27 @@ const StyledContainer = styled(Container)`
 `;
 */
 
-// test layouts
 const Profile = () => (
-  <Row nogutter>
-    <Col xs={3}>
-      Test column goes here
+  <Row
+    nogutter
+    style={{
+      height: '100vh',
+    }}
+  >
+    <Col xs={3} style={{ background: '#3B4252' }}>
+      <Row
+        debug
+        align="center"
+        justify="around"
+        direction="column"
+        style={{ minHeight: "100%" }}
+        gutterWidth={16}
+      >
+        <Col xs={6} debug>Col 1</Col>
+        <Col xs={6} debug>Col 2</Col>
+        <Col xs={6} debug>Col 3</Col>
+        <Col xs={6} debug>Col 4</Col>
+      </Row>
     </Col>
     <Col xs={9}>
       repo list goes here

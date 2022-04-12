@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-grid-system';
 import Text from 'components/text';
-// style={{ height: '300px' }}
 
 // test text props, defaults
 // ${({ theme }) => theme.colors.secondary}

@@ -33,10 +33,10 @@ const Main = () => {
   return (
     <StyledContainer>
       <form onSubmit={handleSubmit}>
-        <Row align="center" justify="center" nogutter>
+        <Row align="center" justify="center" nonvoter>
           <Label>Search Devs</Label>
         </Row>
-        <Row align="center" justify="center" nogutter>
+        <Row align="center" justify="center" nonvoter>
           <Col>
             <Input
               type="text"

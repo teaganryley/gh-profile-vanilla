@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import StyledIcon from 'components/icon';
 import Button from 'components/button';
 import Input from 'components/input';
-import search from 'assets/search.png';
+import { search } from 'assets/icons';
 
 const StyledContainer = styled(Container)`
   height: 100vh;
@@ -33,10 +33,10 @@ const Main = () => {
   return (
     <StyledContainer>
       <form onSubmit={handleSubmit}>
-        <Row align="center" justify="center" nonvoter>
+        <Row align="center" justify="center" nogutter>
           <Label>Search Devs</Label>
         </Row>
-        <Row align="center" justify="center" nonvoter>
+        <Row align="center" justify="center" nogutter>
           <Col>
             <Input
               type="text"

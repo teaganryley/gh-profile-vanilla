@@ -62,15 +62,27 @@ const Menu = ({ user }) => (
       </Text>
     </Col>
     <Col xs={12}>
-      <Row align="center" justify="between" direction="row">
-        <Col xs={4}>
-          <StyledIcon src={follower} />
+      <Row align="center" justify="between" direction="row" nogutter>
+        <Col>
+          <Text lineHeight="26px" fontStyle="italic">
+            <StyledIcon src={follower} color="#ECEFF4" />
+            {user.followers}
+            followers
+          </Text>
         </Col>
-        <Col xs={4}>
-          <StyledIcon src={heart} />
+        <Col>
+          <Text lineHeight="26px" fontStyle="italic">
+            <StyledIcon src={heart} color="#ECEFF4" />
+            {user.following}
+            {' '}
+            following
+          </Text>
         </Col>
-        <Col xs={4}>
-          <StyledIcon src={star} />
+        <Col>
+          <Text lineHeight="26px" fontStyle="italic">
+            <StyledIcon src={star} color="#ECEFF4" />
+            69 stars
+          </Text>
         </Col>
       </Row>
     </Col>

@@ -7,11 +7,11 @@ const theme = {
     muted: '#8190A5',
   },
   fontSizes: {
-    xl: '4rem',
-    l: '2rem',
+    xl: '2rem',
+    l: '1.25rem',
     m: '1rem',
     s: '0.9rem',
-    xs: '0.75',
+    xs: '0.75rem',
   },
 };
 

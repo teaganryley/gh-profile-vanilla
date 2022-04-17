@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-grid-system';
 import StyledIcon from 'components/icon';
-import Text from 'components/text';
+import Typography from 'components/typography';
 import {
   follower,
   heart,
@@ -15,6 +15,11 @@ import {
   star,
 } from 'assets/icons';
 
+// re-style columns with custom component
+// avatar: scale img size and padding, center
+// styled-icon gets color props from theme provider?
+// stack component?
+
 const Avatar = styled.img`
   height: 298px;
   width: 298px;
@@ -24,65 +29,60 @@ const Avatar = styled.img`
 const Menu = ({ user }) => (
   <Row
     align="center"
-    justify="around"
+    justify="start"
     direction="column"
-    style={{ minHeight: '100%' }}
-    // gutterWidth={16}
+    style={{ minHeight: '100%', margin: '0' }}
   >
     <Col xs={12}>
       <Avatar src={user.avatar_url} alt="user avatar" />
     </Col>
     <Col xs={12}>
-      <Text
-        fontSize="40px"
-        fontStyle="italic"
-        lineHeight="50px"
-      >
+      <Typography color="accent" size="xl" fontStyle="italic">
         {user.name}
-      </Text>
+      </Typography>
     </Col>
     <Col xs={12}>
-      <Text
-        fontSize="28px"
-        fontStyle="italic"
-        lineHeight="34px"
-      >
+      <Typography color="accent" size="l" fontStyle="italic">
         {`@${user.login}`}
-      </Text>
+      </Typography>
     </Col>
     <Col xs={12}>
-      <Text
-        color="#8190A5"
-        fontSize="18px"
-        lineHeight="28px"
-      >
+      <Typography color="muted" size="xs" fontStyle="italic">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed tincidunt congue ligula in rutrum. Morbi nec lacus
         condimentum, hendrerit mi eu, feugiat.
-      </Text>
+      </Typography>
     </Col>
     <Col xs={12}>
       <Row align="center" justify="between" direction="row" nogutter>
-        <Col>
-          <Text lineHeight="26px" fontStyle="italic">
-            <StyledIcon src={follower} color="#ECEFF4" />
+        <Col
+          xs={4}
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+          }}
+        >
+          <StyledIcon src={follower} color="#ECEFF4" />
+          <Typography color="accent" size="s" fontStyle="italic">
             {user.followers}
+            {' '}
             followers
-          </Text>
+          </Typography>
         </Col>
-        <Col>
-          <Text lineHeight="26px" fontStyle="italic">
+        <Col xs={4}>
+          <Typography color="accent" size="s" fontStyle="italic">
             <StyledIcon src={heart} color="#ECEFF4" />
             {user.following}
             {' '}
             following
-          </Text>
+          </Typography>
         </Col>
-        <Col>
-          <Text lineHeight="26px" fontStyle="italic">
+        <Col xs={4}>
+          <Typography color="accent" size="s" fontStyle="italic">
             <StyledIcon src={star} color="#ECEFF4" />
             69 stars
-          </Text>
+          </Typography>
         </Col>
       </Row>
     </Col>

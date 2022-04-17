@@ -16,7 +16,7 @@ const StyledContainer = styled(Container)`
 `;
 
 const Label = styled.label`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.secondary};
   font-family: inherit;
   font-size: 40px;
   font-style: italic;

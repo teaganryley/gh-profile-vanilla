@@ -16,14 +16,13 @@ import {
 } from 'assets/icons';
 
 // re-style columns with custom component
-// avatar: scale img size and padding, center
 // styled-icon gets color props from theme provider?
 // stack component?
 
 const Avatar = styled.img`
-  height: 298px;
-  width: 298px;
-  border: 2px solid #C0CCDA;
+  display: block;
+  width: 100%;
+  margin: auto
 `;
 
 const Menu = ({ user }) => (
@@ -33,7 +32,7 @@ const Menu = ({ user }) => (
     direction="column"
     style={{ minHeight: '100%', margin: '0' }}
   >
-    <Col xs={12}>
+    <Col xs={12} style={{ padding: '10% 10% 5%', width: '90%' }}>
       <Avatar src={user.avatar_url} alt="user avatar" />
     </Col>
     <Col xs={12}>

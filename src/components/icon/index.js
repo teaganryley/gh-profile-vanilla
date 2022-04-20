@@ -13,10 +13,23 @@ import Typography from 'components/typography';
   Notes:
     - what happens when col is rendered without children?
 */
+const getIconSize = ({ size }) => {
+  switch (size) {
+    case 'l':
+      return `
+        width: 36px;
+        height: 36px;
+      `;
+    default:
+      return `
+        width: 30px;
+        height: 30px;
+      `;
+  }
+};
 
 const MyIcon = styled(IconTint)`
-  width: 30px;
-  height: 30px;
+  ${getIconSize}
 `;
 
 const Wrapper = styled.div`
@@ -27,8 +40,8 @@ const Wrapper = styled.div`
 
 const Icon = ({
   src,
+  children,
   color,
-  label,
   labelSize,
   labelStyle,
 }) => {
@@ -43,7 +56,7 @@ const Icon = ({
         size={labelSize}
         fontStyle={labelStyle}
       >
-        {label}
+        {children}
       </Typography>
     </Wrapper>
   );
@@ -51,10 +64,10 @@ const Icon = ({
 
 Icon.propTypes = {
   src: PropTypes.node.isRequired,
+  children: PropTypes.node,
   color: PropTypes.string,
-  label: PropTypes.string,
-  labelSize: PropTypes.string,
-  labelStyle: PropTypes.string,
+  labelSize: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+  labelStyle: PropTypes.oneOf(['normal', 'italic']),
 };
 
 export default Icon;

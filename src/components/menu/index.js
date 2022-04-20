@@ -65,8 +65,8 @@ Menu.propTypes = {
     name: PropTypes.string,
     login: PropTypes.string,
     bio: PropTypes.string,
-    followers: PropTypes.string,
-    following: PropTypes.string,
+    followers: PropTypes.number,
+    following: PropTypes.number,
     // starred_url?
     company: PropTypes.string,
     location: PropTypes.string,

@@ -6,11 +6,9 @@ import Typography from 'components/typography';
 
 /*
   0) review react docs
-  1) Abstract icon + label into a single component, called icon.
-  2) research box, then implement
-  3) research stack, then implement
-  4) Abstract stats into new component, composed with icon + label, box, stack
-  5) Abstract social into "..."
+  1) Abstract stats into new component, composed with icon + label, box, stack
+  2) test Stack within Menu component--> default values?
+  3) Abstract social into "..."
 
   Notes:
     - what happens when col is rendered without children?

@@ -15,7 +15,7 @@ const Social = ({
   location,
   email,
   blog,
-  twitter,
+  twitter_username,
 }) => (
   <Stack
     direction="column"
@@ -59,13 +59,13 @@ const Social = ({
         {blog}
       </Icon>
     )}
-    {bird && (
+    { twitter_username && (
       <Icon
         src={bird}
         color="accent"
         labelStyle="italic"
       >
-        {twitter}
+        {twitter_username}
       </Icon>
     )}
   </Stack>
@@ -76,7 +76,7 @@ Social.propTypes = {
   location: PropTypes.string,
   email: PropTypes.string,
   blog: PropTypes.string,
-  twitter: PropTypes.string,
+  twitter_username: PropTypes.string,
 };
 
 export default Social;

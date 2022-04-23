@@ -4,7 +4,7 @@ import { Row, Col } from 'react-grid-system';
 import { follower, heart, star } from 'assets/icons';
 import Icon from 'components/icon';
 
-const Stats = ({ followers, following, stars }) => (
+const Stats = ({ followers = 0, following = 0, stars = 0 }) => (
   <Row
     align="center"
     justify="between"

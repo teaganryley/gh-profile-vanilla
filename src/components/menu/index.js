@@ -13,7 +13,9 @@ const Avatar = styled.img`
   margin: auto
 `;
 
-const Menu = ({ user }) => (
+const Menu = ({
+  avatar_url, name, login, ...user
+}) => (
   <Row
     align="center"
     justify="start"
@@ -21,14 +23,14 @@ const Menu = ({ user }) => (
     style={{ minHeight: '100%', margin: '0' }}
   >
     <Col xs={12} style={{ padding: '10% 10% 5%', width: '90%' }}>
-      <Avatar src={user.avatar_url} alt="user avatar" />
+      <Avatar src={avatar_url} alt="user avatar" />
     </Col>
     <Col xs={12}>
       <Typography color="accent" size="xl" fontStyle="italic">
-        {user.name}
+        {name}
       </Typography>
       <Typography color="accent" size="l" fontStyle="italic">
-        {`@${user.login}`}
+        {`@${login}`}
       </Typography>
     </Col>
     <Col xs={12}>
@@ -39,20 +41,10 @@ const Menu = ({ user }) => (
       </Typography>
     </Col>
     <Col xs={12}>
-      <Stats
-        followers={user.followers}
-        following={user.following}
-        stars={80}
-      />
+      <Stats {...user} />
     </Col>
     <Col xs={12}>
-      <Social
-        company={user.company}
-        location={user.location}
-        email={user.email}
-        blog={user.blog}
-        twitter={user.twitter_username}
-      />
+      <Social {...user} />
     </Col>
     <Col
       xs={12}
@@ -70,20 +62,9 @@ const Menu = ({ user }) => (
 );
 
 Menu.propTypes = {
-  user: PropTypes.shape({
-    avatar_url: PropTypes.string,
-    name: PropTypes.string,
-    login: PropTypes.string,
-    bio: PropTypes.string,
-    followers: PropTypes.number,
-    following: PropTypes.number,
-    // starred_url?
-    company: PropTypes.string,
-    location: PropTypes.string,
-    email: PropTypes.string,
-    blog: PropTypes.string,
-    twitter_username: PropTypes.string,
-  }),
+  avatar_url: PropTypes.string,
+  name: PropTypes.string,
+  login: PropTypes.string,
 };
 
 export default Menu;

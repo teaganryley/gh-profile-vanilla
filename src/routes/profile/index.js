@@ -11,7 +11,7 @@ import userMock from 'mocks/user-mock.json';
 const Profile = () => (
   <Row nogutter style={{ height: '100vh' }}>
     <Col xs={3} style={{ background: '#3B4252' }}>
-      <Menu user={userMock} />
+      <Menu {...userMock} />
     </Col>
     <Col xs={9}>
       repo list goes here

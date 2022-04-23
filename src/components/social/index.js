@@ -23,41 +23,51 @@ const Social = ({
     alignItems="flex-start"
     spacing={1}
   >
-    <Icon
-      src={org}
-      color="accent"
-      labelStyle="italic"
-    >
-      {company}
-    </Icon>
-    <Icon
-      src={mapIcon}
-      color="accent"
-      labelStyle="italic"
-    >
-      {location}
-    </Icon>
-    <Icon
-      src={mail}
-      color="accent"
-      labelStyle="italic"
-    >
-      {email}
-    </Icon>
-    <Icon
-      src={link}
-      color="accent"
-      labelStyle="italic"
-    >
-      {blog}
-    </Icon>
-    <Icon
-      src={bird}
-      color="accent"
-      labelStyle="italic"
-    >
-      {twitter}
-    </Icon>
+    {company && (
+      <Icon
+        src={org}
+        color="accent"
+        labelStyle="italic"
+      >
+        {company}
+      </Icon>
+    )}
+    {location && (
+      <Icon
+        src={mapIcon}
+        color="accent"
+        labelStyle="italic"
+      >
+        {location}
+      </Icon>
+    )}
+    {email && (
+      <Icon
+        src={mail}
+        color="accent"
+        labelStyle="italic"
+      >
+        {email}
+      </Icon>
+    )}
+    {blog && (
+      <Icon
+        src={link}
+        color="accent"
+        labelStyle="italic"
+      >
+        {blog}
+      </Icon>
+    )}
+    {bird && (
+      <Icon
+        src={bird}
+        color="accent"
+        labelStyle="italic"
+      >
+        {twitter}
+      </Icon>
+    )}
   </Stack>
 );
 

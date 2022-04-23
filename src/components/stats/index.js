@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-grid-system';
-// import styled from 'styled-components';
 import { follower, heart, star } from 'assets/icons';
 import Icon from 'components/icon';
 

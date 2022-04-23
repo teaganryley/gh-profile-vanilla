@@ -8,7 +8,7 @@ const getStyles = ({
   alignItems,
   spacing,
 }) => (`
-  direction: ${direction};
+  flex-direction: ${direction};
   justify-content: ${justifyContent};
   align-items: ${alignItems};
   gap: ${theme.space[spacing] ?? theme.space[1]};
@@ -28,3 +28,5 @@ Stack.propTypes = {
   alignItems: PropTypes.string,
   spacing: PropTypes.number,
 };
+
+export default Stack;

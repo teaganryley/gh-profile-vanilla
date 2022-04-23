@@ -39,7 +39,11 @@ const Menu = ({ user }) => (
       </Typography>
     </Col>
     <Col xs={12}>
-      <Stats />
+      <Stats
+        followers={user.followers}
+        following={user.following}
+        stars={80}
+      />
     </Col>
     <Col xs={12}>
       <Social />

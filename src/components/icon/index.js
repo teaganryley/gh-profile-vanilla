@@ -4,15 +4,6 @@ import styled, { useTheme } from 'styled-components';
 import IconTint from 'react-icon-tint';
 import Typography from 'components/typography';
 
-/*
-  0) review react docs
-  1) Abstract stats into new component, composed with icon + label, box, stack
-  2) test Stack within Menu component--> default values?
-  3) Abstract social into "..."
-
-  Notes:
-    - what happens when col is rendered without children?
-*/
 const getIconSize = ({ size }) => {
   switch (size) {
     case 'l':

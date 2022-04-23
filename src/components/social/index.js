@@ -1,15 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   bird,
   link,
-  location,
+  location as mapIcon, // to avoid collision with prop
   mail,
   org,
 } from 'assets/icons';
 import Stack from 'components/stack';
 import Icon from 'components/icon';
 
-const Social = () => (
+const Social = ({
+  company,
+  location,
+  email,
+  blog,
+  twitter,
+}) => (
   <Stack
     direction="column"
     justifyContent="space-evenly"
@@ -21,37 +28,45 @@ const Social = () => (
       color="accent"
       labelStyle="italic"
     >
-      organization
+      {company}
     </Icon>
     <Icon
-      src={location}
+      src={mapIcon}
       color="accent"
       labelStyle="italic"
     >
-      location
+      {location}
     </Icon>
     <Icon
       src={mail}
       color="accent"
       labelStyle="italic"
     >
-      email
+      {email}
     </Icon>
     <Icon
       src={link}
       color="accent"
       labelStyle="italic"
     >
-      www.website.com
+      {blog}
     </Icon>
     <Icon
       src={bird}
       color="accent"
       labelStyle="italic"
     >
-      @bird
+      {twitter}
     </Icon>
   </Stack>
 );
+
+Social.propTypes = {
+  company: PropTypes.string,
+  location: PropTypes.string,
+  email: PropTypes.string,
+  blog: PropTypes.string,
+  twitter: PropTypes.string,
+};
 
 export default Social;

@@ -46,7 +46,13 @@ const Menu = ({ user }) => (
       />
     </Col>
     <Col xs={12}>
-      <Social />
+      <Social
+        company={user.company}
+        location={user.location}
+        email={user.email}
+        blog={user.blog}
+        twitter={user.twitter_username}
+      />
     </Col>
     <Col
       xs={12}

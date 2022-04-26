@@ -59,7 +59,7 @@ const Social = ({
         {blog}
       </Icon>
     )}
-    { twitter_username && (
+    {twitter_username && (
       <Icon
         src={bird}
         color="accent"

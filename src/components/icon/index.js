@@ -37,7 +37,6 @@ const Icon = ({
   labelStyle,
 }) => {
   const theme = useTheme();
-  console.log('theme object from ', theme);
 
   return (
     <Wrapper>

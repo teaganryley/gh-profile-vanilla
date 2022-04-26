@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // import { Row, Col } from 'react-grid-system';
 import Stack from 'components/stack';
@@ -9,9 +9,16 @@ import { star } from 'assets/icons';
 
 const Box = styled.div`
   border-bottom: 1px solid #ECEFF4;
+  margin: 0 0 2%;
 `;
-
-const RepoCard = () => (
+// background colour?
+// calculate "30 days" w/ function
+const RepoCard = ({
+  name,
+  description,
+  stargazers_count = 0,
+  updated_at,
+}) => (
   <Box>
     <Stack
       direction="column"
@@ -19,22 +26,18 @@ const RepoCard = () => (
       alignItems="flex-start"
       spacing={1}
     >
-      <Typography color="muted" fontStyle="italic" size="l">
-        Repository Name
+      <Typography color="secondary" fontStyle="italic" size="l">
+        {name}
       </Typography>
-      <Typography color="muted" size="s">
-        Lorem ipsum dolor sit Amen, consectetur adipiscing elia.
-        {' '}
-        Sed tincidunt longue ligula in rutrum.
-        {' '}
-        Morbi nec lacus condimentum, hendrerit mi eu, Fuegian.
+      <Typography color="secondary" size="s">
+        {description}
       </Typography>
       <Stack
         justifyContent="flex-start"
         alignItems="center"
       >
         <Icon src={star} color="muted" labelStyle="italic">
-          100 stars
+          {stargazers_count}
         </Icon>
         <Typography color="muted">
           {' '}
@@ -42,7 +45,7 @@ const RepoCard = () => (
           {' '}
         </Typography>
         <Typography color="muted" fontStyle="italic">
-          Updated 30 days ago
+          {updated_at}
         </Typography>
       </Stack>
     </Stack>
@@ -50,7 +53,10 @@ const RepoCard = () => (
 );
 
 RepoCard.propTypes = {
-
+  name: PropTypes.string,
+  description: PropTypes.string,
+  stargazers_count: PropTypes.number,
+  updated_at: PropTypes.string,
 };
 
 export default RepoCard;

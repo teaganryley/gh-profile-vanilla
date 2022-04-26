@@ -3,14 +3,12 @@ import { Row, Col } from 'react-grid-system';
 import Menu from 'components/menu';
 import RepoCard from 'components/repo-card';
 import userMock from 'mocks/user-mock.json';
+import repoList from 'mocks/repo-mock.json';
 
-/*
-  TODO:
-  1) mock repo list
-  2) RepoCard data flow with mock
-*/
+// consider pagination
+
 const Profile = () => {
-  console.log('myList');
+  console.log('test');
 
   return (
     <Row nogutter style={{ height: '100vh' }}>
@@ -18,7 +16,7 @@ const Profile = () => {
         <Menu {...userMock} />
       </Col>
       <Col xs={9} style={{ padding: '2.5% 5%' }}>
-        <RepoCard />
+        {repoList.map(repo => <RepoCard key={repo.id} {...repo} />)}
       </Col>
     </Row>
   );

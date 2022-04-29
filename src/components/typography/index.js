@@ -18,7 +18,7 @@ Typography.propTypes = {
   color: PropTypes.string,
   fontStyle: PropTypes.string,
   size: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Typography;

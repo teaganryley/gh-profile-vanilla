@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const Input = styled.input`
   background-color: #FFFFFF;
@@ -14,9 +13,5 @@ const Input = styled.input`
   line-height: 62px;
   text-align: left;
 `;
-
-Input.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Input;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import { Row, Col } from 'react-grid-system';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import Stack from 'components/stack';
 import Typography from 'components/typography';
 import Icon from 'components/icon';
@@ -10,9 +10,8 @@ import { star } from 'assets/icons';
 const Box = styled.div`
   border-bottom: 1px solid #ECEFF4;
   margin: 0 0 2%;
-`;
-// background colour?
-// calculate "30 days" w/ function
+  `;
+
 const RepoCard = ({
   name,
   description,
@@ -37,7 +36,7 @@ const RepoCard = ({
         alignItems="center"
       >
         <Icon src={star} color="muted" labelStyle="italic">
-          {stargazers_count}
+          {`${stargazers_count} stars`}
         </Icon>
         <Typography color="muted">
           {' '}
@@ -45,7 +44,7 @@ const RepoCard = ({
           {' '}
         </Typography>
         <Typography color="muted" fontStyle="italic">
-          {updated_at}
+          {`Updated ${formatDistanceToNow(new Date(updated_at))} ago`}
         </Typography>
       </Stack>
     </Stack>

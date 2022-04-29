@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
-import StyledIcon from 'components/icon';
+import Icon from 'components/icon';
 import Button from 'components/button';
 import Input from 'components/input';
 import { search } from 'assets/icons';
@@ -46,7 +46,7 @@ const Main = () => {
           </Col>
           <Col>
             <Button variant="primary">
-              <StyledIcon src={search} color="#ECEFF4" />
+              <Icon src={search} color="accent" />
               Buscar
             </Button>
           </Col>

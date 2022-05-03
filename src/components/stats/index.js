@@ -4,7 +4,11 @@ import { Row, Col } from 'react-grid-system';
 import { follower, heart, star } from 'assets/icons';
 import Icon from 'components/icon';
 
-const Stats = ({ followers = 0, following = 0, stars = 0 }) => (
+const Stats = ({
+  followers = 0,
+  following = 0,
+  starCount = 0,
+}) => (
   <Row
     align="center"
     justify="between"
@@ -38,7 +42,7 @@ const Stats = ({ followers = 0, following = 0, stars = 0 }) => (
         labelSize="s"
         labelStyle="italic"
       >
-        {`${stars} stars`}
+        {`${starCount} stars`}
       </Icon>
     </Col>
   </Row>
@@ -47,7 +51,7 @@ const Stats = ({ followers = 0, following = 0, stars = 0 }) => (
 Stats.propTypes = {
   followers: PropTypes.number,
   following: PropTypes.number,
-  stars: PropTypes.number,
+  starCount: PropTypes.number,
 };
 
 export default Stats;

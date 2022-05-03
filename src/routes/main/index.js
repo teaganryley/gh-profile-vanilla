@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
@@ -26,9 +26,11 @@ const Label = styled.label`
 `;
 
 const Main = () => {
+  const [value, setValue] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = () => navigate('/profile/test');
+  const handleChange = e => setValue(e.target.value);
+  const handleSubmit = e => navigate(`/profile/${e.target.value}`);
 
   return (
     <StyledContainer>
@@ -39,9 +41,11 @@ const Main = () => {
         <Row align="center" justify="center" nogutter>
           <Col>
             <Input
-              type="text"
-              value="Type the username here..."
               id="search-input"
+              type="text"
+              placeholder="Type the username here..."
+              value={value}
+              onChange={handleChange}
             />
           </Col>
           <Col>

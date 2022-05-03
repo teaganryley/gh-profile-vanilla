@@ -5,8 +5,14 @@ import Menu from 'components/menu';
 import RepoCard from 'components/repo-card';
 import userMock from 'mocks/user-mock.json';
 import repoList from 'mocks/repo-mock.json';
+// import api from 'services/api';
 
-// consider pagination
+/* TODO:
+  1) get username from route
+  2) useEffect gets repolist using username
+  3) Menu gets username and makes api requests inside
+  4) consider pagination
+*/
 const Wrapper = styled(Row)`
   height: 100vh;
 `;

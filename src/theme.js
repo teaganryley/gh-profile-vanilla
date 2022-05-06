@@ -5,6 +5,7 @@ const theme = {
     background: '#FAFAFA',
     accent: '#ECEFF4',
     muted: '#8190A5',
+    error: '#CD5C5C',
   },
   space: [
     0,

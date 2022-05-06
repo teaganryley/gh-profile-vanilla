@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +7,9 @@ import Icon from 'components/icon';
 import Button from 'components/button';
 import Input from 'components/input';
 import { search } from 'assets/icons';
+import Stack from 'components/stack';
+import Typography from 'components/typography';
+import api from 'services/api';
 
 const StyledContainer = styled(Container)`
   height: 100vh;
@@ -25,36 +29,69 @@ const Label = styled.label`
   text-align: center;
 `;
 
+const Error = styled(Typography)`
+  visibility: ${({ visible }) => visible ? `visible` : `hidden` }
+`;
+
 const Main = () => {
   const [value, setValue] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = e => setValue(e.target.value);
-  const handleSubmit = e => navigate(`/profile/${e.target.value}`);
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    api.get(`/users/${value}`)
+      .then(response => {
+        console.log('search response', response);
+        setIsVisible(false);
+        // set user profile data in context
+        // navigate(`/profile/${value}`);
+      })
+      .catch(error => {
+        console.log(error);
+        setIsVisible(true);
+      });
+  };
 
   return (
     <StyledContainer>
       <form onSubmit={handleSubmit}>
-        <Row align="center" justify="center" nogutter>
+        <Stack
+          direction="column"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+        >
           <Label>Search Devs</Label>
-        </Row>
-        <Row align="center" justify="center" nogutter>
-          <Col>
-            <Input
-              id="search-input"
-              type="text"
-              placeholder="Type the username here..."
-              value={value}
-              onChange={handleChange}
-            />
-          </Col>
-          <Col>
-            <Button variant="primary">
-              <Icon src={search} color="accent" />
-              Buscar
-            </Button>
-          </Col>
-        </Row>
+          <Row align="center" justify="center" nogutter>
+            <Col>
+              <Input
+                id="search-input"
+                type="text"
+                placeholder="Type the username here..."
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                color="muted"
+                bgColor="white"
+                borderColor="secondary"
+              />
+            </Col>
+            <Col>
+              <Button variant="primary">
+                <Icon src={search} color="accent" />
+                Buscar
+              </Button>
+            </Col>
+          </Row>
+          <Error
+            visible={isVisible}
+            color="error"
+            fontStyle="italic"
+            size="s"
+          >
+            User not found
+          </Error>
+        </Stack>  
       </form>
     </StyledContainer>
   );
